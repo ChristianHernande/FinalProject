@@ -6,10 +6,13 @@
 package com.finalProject.Final.repository;
 
 import com.finalProject.Final.domain.Paciente;
-import java.io.Serializable;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
 public interface PacienteRepository extends JpaRepository<Paciente, Long>{
     
+   //Paciente findByObraId(Long obraId);
+    
+    List<Paciente> findByObraId (Long obraId);
 }

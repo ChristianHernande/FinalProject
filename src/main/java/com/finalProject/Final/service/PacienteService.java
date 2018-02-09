@@ -13,7 +13,9 @@ public interface PacienteService {
     
     List<Paciente> findAll();
     
-    Paciente findOne (Long obraId);
+    List<Paciente> findByObraId(Long obraId);
+    
+    //Paciente findByObraId (Long obraId);
     
     Paciente finOne (Long pacienteId);
     

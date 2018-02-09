@@ -29,15 +29,25 @@ public class PacienteServiceImp implements PacienteService{
     }
 
     @Override
-    public Paciente findOne(Long obraId) {
-        return pacienteRepository.findOne(obraId);
-    }
-
-    @Override
     public Paciente finOne(Long pacienteId) {
         return pacienteRepository.findOne(pacienteId);
     }
 
+//    @Override
+//    public List<Paciente> findByObraId(Long obraId) {
+//        return pacienteRepository.findByObraId(obraId);
+//    }
+
+//    @Override
+//    public Paciente findByObraId(Long obraId) {
+//        return pacienteRepository.findByObraId(obraId);
+//    }
+
+    @Override
+    public List<Paciente> findByObraId(Long obraId) {
+        return pacienteRepository.findByObraId(obraId);
+    }
+    
     @Override
     public void save(Paciente paciente) {
         pacienteRepository.save(paciente);

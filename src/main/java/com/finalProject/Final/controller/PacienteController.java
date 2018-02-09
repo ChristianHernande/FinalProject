@@ -30,15 +30,18 @@ public class PacienteController {
         return pacientes;
     }
     /*Este metodo busca a los pacientes por OBRA_ID y lista solo los del mismo ID*/
-    @GetMapping(value = "/administrador/pacientes/{obraId}")
-    public ResponseEntity <Paciente> getPaciente(@PathVariable("obraId") Long obraId){
-        Paciente paciente = pacienteService.findOne(obraId);
-        if(paciente == null){
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok(paciente);
+    @GetMapping(value = "/administrador/pacientes_s/{obraId}")
+    public List<Paciente> listByObraId (Long obraId){
+        List<Paciente> pacientes = pacienteService.findByObraId(obraId);
+        return pacientes;
     }
     
-    
-    
+//        @GetMapping("/administrador/pacientes_s/{obraId}")
+//    public ResponseEntity<Paciente> getPacienteByObraId(@PathVariable("obraId") Long obraId) {
+//        Paciente paciente = pacienteService.findByObraId(obraId);
+//        if (paciente == null) {
+//            return ResponseEntity.notFound().build();
+//        }
+//        return ResponseEntity.ok(paciente);
+//    }
 }
