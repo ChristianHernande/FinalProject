@@ -25,21 +25,21 @@ public class PacienteController {
     public PacienteController(PacienteService pacienteService) {
         this.pacienteService = pacienteService;
     }
-    
+    /*Este metodo hace seleccion de todos los pacientes registrados */
     @GetMapping(value = "/administrador/pacientes")
     public List<Paciente> listAll(){
         List<Paciente> pacientes = pacienteService.findAll();
         System.out.println(pacientes.size());
         return pacientes;
     }
-    
-//    @GetMapping(value = "/administrador/pacientes/{obraid}")
-//    public ResponseEntity <Paciente> getPaciente(@PathVariable(obraid) Long obraid){
-//        Paciente paciente = pacienteService.findOne(id);
-//        if(paciente == null){
-//            return ResponseEntity.notFound().build();
-//        }
-//        return ResponseEntity.ok(paciente);
-//    }
+    /*Este metodo busca a los pacientes por OBRA_ID y lista solo los del mismo ID*/
+    @GetMapping(value = "/administrador/pacientes/{obraId}")
+    public ResponseEntity <Paciente> getPaciente(@PathVariable("obraId") Long obraId){
+        Paciente paciente = pacienteService.findOne(obraId);
+        if(paciente == null){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(paciente);
+    }
     
 }

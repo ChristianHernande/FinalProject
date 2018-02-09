@@ -32,8 +32,8 @@ public class PacienteServiceImp implements PacienteService{
     }
 
     @Override
-    public Paciente findOne(Long id) {
-        return pacienteRepository.findOne(id);
+    public Paciente findOne(Long obraId) {
+        return pacienteRepository.findOne(obraId);
     }
 
     

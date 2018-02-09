@@ -5,17 +5,21 @@
  */
 package com.finalProject.Final.service;
 
-import com.finalProject.Final.domain.Paciente;
+import com.finalProject.Final.domain.Medico;
 import java.util.List;
-
 /**
  *
- * @author Seguritech2
+ * @author Lonitha
  */
-public interface PacienteService {
+public interface MedicoService {
     
-    List<Paciente> findAll();
     
-    Paciente findOne (Long obraId);
+    List<Medico> findAll();
+
+    Medico findOne(Long id);
+
+    void save(Medico medico);
+
+    void delete(Long id);
     
 }
