@@ -12,10 +12,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- *
- * @author Seguritech2
- */
+
 @Service
 @Transactional
 public class PacienteServiceImp implements PacienteService{
@@ -36,6 +33,22 @@ public class PacienteServiceImp implements PacienteService{
         return pacienteRepository.findOne(obraId);
     }
 
+    @Override
+    public Paciente finOne(Long pacienteId) {
+        return pacienteRepository.findOne(pacienteId);
+    }
+
+    @Override
+    public void save(Paciente paciente) {
+        pacienteRepository.save(paciente);
+    }
+
+    @Override
+    public void delete(Long pacienId) {
+        pacienteRepository.delete(pacienId);
+    }
+
+    
     
     
 }

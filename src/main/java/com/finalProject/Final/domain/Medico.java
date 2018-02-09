@@ -7,18 +7,17 @@ package com.finalProject.Final.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- *
- * @author Lonitha
- */
 @Entity
 @Table(name = "MEDICOS")
 public class Medico {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "MEDICO_ID")
     private Long medicoId;
     

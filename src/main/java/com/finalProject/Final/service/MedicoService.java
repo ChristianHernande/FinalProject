@@ -7,10 +7,7 @@ package com.finalProject.Final.service;
 
 import com.finalProject.Final.domain.Medico;
 import java.util.List;
-/**
- *
- * @author Lonitha
- */
+
 public interface MedicoService {
     
     

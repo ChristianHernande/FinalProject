@@ -8,14 +8,17 @@ package com.finalProject.Final.service;
 import com.finalProject.Final.domain.Paciente;
 import java.util.List;
 
-/**
- *
- * @author Seguritech2
- */
+
 public interface PacienteService {
     
     List<Paciente> findAll();
     
     Paciente findOne (Long obraId);
+    
+    Paciente finOne (Long pacienteId);
+    
+    void save(Paciente paciente);
+
+    void delete(Long pacienId);
     
 }

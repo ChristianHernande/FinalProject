@@ -9,10 +9,7 @@ import com.finalProject.Final.domain.Paciente;
 import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-/**
- *
- * @author Seguritech2
- */
+
 public interface PacienteRepository extends JpaRepository<Paciente, Long>{
     
 }
