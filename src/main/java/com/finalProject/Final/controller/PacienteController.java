@@ -8,9 +8,7 @@ package com.finalProject.Final.controller;
 import com.finalProject.Final.domain.Paciente;
 import com.finalProject.Final.service.PacienteService;
 import java.util.List;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -30,18 +28,11 @@ public class PacienteController {
         return pacientes;
     }
     /*Este metodo busca a los pacientes por OBRA_ID y lista solo los del mismo ID*/
-    @GetMapping(value = "/administrador/pacientes_s/{obraId}")
-    public List<Paciente> listByObraId (Long obraId){
+    @GetMapping(value = "/administrador/pacientes_s", params = {"obraId"})
+    public List<Paciente> listAll(Long obraId) {
         List<Paciente> pacientes = pacienteService.findByObraId(obraId);
         return pacientes;
     }
     
-//        @GetMapping("/administrador/pacientes_s/{obraId}")
-//    public ResponseEntity<Paciente> getPacienteByObraId(@PathVariable("obraId") Long obraId) {
-//        Paciente paciente = pacienteService.findByObraId(obraId);
-//        if (paciente == null) {
-//            return ResponseEntity.notFound().build();
-//        }
-//        return ResponseEntity.ok(paciente);
-//    }
+
 }

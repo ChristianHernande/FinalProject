@@ -27,7 +27,7 @@ public class CRUDPacienteController {
         this.pacienteService = pacienteService;
     }
 
-    @GetMapping(value = "/administrador/pacientes/{pacienteId}")
+    @GetMapping(value = "/administrador/pacientes_s/{pacienteId}")
     public ResponseEntity <Paciente> getPaciente(@PathVariable("pacienteId")Long pacienteId){
         Paciente paciente = pacienteService.finOne(pacienteId);
         if(paciente==null){
@@ -59,4 +59,5 @@ public class CRUDPacienteController {
         pacienteService.delete(id);
         return ResponseEntity.ok().build();
     }
+
 }
