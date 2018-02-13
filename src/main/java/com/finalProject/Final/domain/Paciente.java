@@ -17,8 +17,8 @@ import org.springframework.cache.annotation.Cacheable;
 
 @Entity
 @Table(name = "PACIENTES")
-//@Cacheable
-//@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+@Cacheable
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Paciente {
     
     @Id

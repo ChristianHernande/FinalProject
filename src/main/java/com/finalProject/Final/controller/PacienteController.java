@@ -27,7 +27,7 @@ public class PacienteController {
         System.out.println(pacientes.size());
         return pacientes;
     }
-    /*Este metodo busca a los pacientes por OBRA_ID y lista solo los del mismo ID*/
+    /*Este metodo busca a los pacientes por OBRA_ID y lista solo los del mismo OBRA_ID*/
     @GetMapping(value = "/administrador/pacientes_s", params = {"obraId"})
     public List<Paciente> listAll(Long obraId) {
         List<Paciente> pacientes = pacienteService.findByObraId(obraId);
